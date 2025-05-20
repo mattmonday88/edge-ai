@@ -3,7 +3,7 @@
 <div align="center">
   <img src=".\docs\syllabus\usa_logo.png" alt="University of South Alabama Logo" width="300">
   <h2>5-Week Master's Level Course</h2>
-  <p>Department of Computer Science, University of South Alabama</p>
+  <p>Edge AI Certification Program, University of South Alabama</p>
 </div>
 
 ## 📚 Course Overview
