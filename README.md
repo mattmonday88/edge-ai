@@ -1,7 +1,7 @@
 # Deploying Edge AI
 
 <div align="center">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/UniversityofSouthAlabama_logo.svg" alt="University of South Alabama Logo" width="300">
+  <img src=".\docs\syllabus\usa_logo.png" alt="University of South Alabama Logo" width="300">
   <h2>5-Week Master's Level Course</h2>
   <p>Department of Computer Science, University of South Alabama</p>
 </div>
@@ -116,7 +116,6 @@ This repository provides access to:
 
 **Course Instructor:** Dr. Ali Haidous  
 **Email:** ali.haidous@gmail.com  
-**Office Hours:** By Appointment  
-**Course Website:** edge-ai
+**Office Hours:** By Appointment
 
 For technical assistance with course projects, implementation questions, or additional resources, please use GitHub Issues or contact the instructor via email.
