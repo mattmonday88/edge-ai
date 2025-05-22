@@ -7,3 +7,7 @@ docs/syllabus/syllabus.out
 docs/syllabus/syllabus.synctex.gz
 docs/syllabus/syllabus.toc
 python_env/edge_ai_project/requirements.txt
+*.pt
+app/requirements.txt
+app/yolo
+coco8

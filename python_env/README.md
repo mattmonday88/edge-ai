@@ -1,206 +1,243 @@
-# Edge AI Development Environment
+# Edge AI Development Environment Setup
 
-A comprehensive setup for Edge AI development with ONNX optimization, supporting both Windows and Linux/macOS systems.
+This repository contains a setup script that creates a complete Edge AI development environment with Python 3.12, UV package manager, and all necessary dependencies for computer vision, machine learning, and AI model deployment.
 
-## Overview
-
-This repository provides the necessary tools and scripts to set up a complete Edge AI development environment. It's designed to work with the latest Python 3.12 and includes all dependencies needed for:
-
-- Model optimization with ONNX
-- Working with Hugging Face models
-- Computer vision and NLP tasks
-- Creating API endpoints for your models
-- Building demo applications
-
-## System Requirements
-
-- Windows, macOS, or Linux
-- Git Bash (recommended for Windows users)
-- Internet connection for downloading packages
-- At least 10GB of free disk space
-- 8GB+ RAM recommended
-
-## Quick Setup
-
-### Option 1: Using the Automated Script
-
-The included bash script will:
-1. Install the UV package manager (a faster alternative to pip)
-2. Create a Python 3.12 virtual environment
-3. Install all required dependencies
+## 🚀 Quick Start
 
 ```bash
-# Make the script executable
+# Clone or download the setup script
 chmod +x setup_edge_ai_env.sh
-
-# Run the script
 ./setup_edge_ai_env.sh
 ```
 
-### Option 2: Manual Setup
+## 📋 What This Script Does
 
-If you prefer to set up manually:
+The `setup_edge_ai_env.sh` script automatically:
+
+1. **Installs UV Package Manager** - A fast Python package installer and resolver
+2. **Creates a Python 3.12 Virtual Environment** - Isolated environment using UV
+3. **Installs Comprehensive AI Dependencies** - All packages needed for Edge AI development
+4. **Verifies Installation** - Checks that key packages are working correctly
+5. **Provides Usage Instructions** - Shows you how to activate and use the environment
+
+## 🔧 Prerequisites
+
+- **Operating System**: Linux, macOS, or Windows (with Git Bash/WSL)
+- **Internet Connection**: Required for downloading packages
+- **Disk Space**: ~3-5GB for all dependencies
+- **Permissions**: Regular user permissions (avoid running with sudo)
+
+## 📦 Installed Packages
+
+### Core AI/ML Frameworks
+- **PyTorch** - Deep learning framework
+- **TensorFlow** - Google's ML platform
+- **Ultralytics** - YOLO object detection
+- **Transformers** - Hugging Face NLP models
+
+### Computer Vision
+- **OpenCV** - Computer vision library
+- **Pillow** - Image processing
+- **scikit-image** - Image analysis algorithms
+
+### Model Optimization & Deployment
+- **ONNX & ONNX Runtime** - Model interoperability
+- **Optimum** - Model optimization tools
+- **Neural Compressor** - Intel's optimization toolkit
+
+### Development & Deployment Tools
+- **FastAPI** - Modern web API framework
+- **Streamlit** - Data app framework
+- **Gradio** - ML demo interfaces
+- **JupyterLab** - Interactive development environment
+
+### Audio Processing
+- **Librosa** - Audio analysis
+- **SoundFile** - Audio file I/O
+
+## 🎯 Usage Instructions
+
+### Option 1: Using UV Run (Recommended)
+```bash
+# Run Python scripts directly
+uv run --python .venv python your_script.py
+
+# Start Jupyter Lab
+uv run --python .venv jupyter lab
+
+# Launch a Streamlit app
+uv run --python .venv streamlit run app.py
+```
+
+### Option 2: Manual Environment Activation
+
+**Linux/macOS:**
+```bash
+source .venv/bin/activate
+python your_script.py
+deactivate  # when done
+```
+
+**Windows (Git Bash/PowerShell):**
+```bash
+source .venv/Scripts/activate
+python your_script.py
+deactivate  # when done
+```
+
+## 📁 Project Structure
+
+After running the setup script, your directory will contain:
+
+```
+your-project/
+├── setup_edge_ai_env.sh    # Setup script
+├── requirements.txt        # Generated dependencies file
+├── .venv/                  # Virtual environment (created by script)
+│   ├── bin/               # (Linux/macOS) or Scripts/ (Windows)
+│   ├── lib/
+│   └── ...
+└── README.md              # This file
+```
+
+## 🔍 Verification
+
+The script automatically verifies key installations. You should see output like:
+
+```
+✅ Key packages verified:
+  - Ultralytics: 8.x.x
+  - ONNX: 1.x.x
+  - ONNX Runtime: 1.x.x
+  - PyTorch: 2.x.x
+  - TensorFlow: 2.x.x
+  - FastAPI: 0.x.x
+```
+
+## 💡 Example Projects You Can Build
+
+With this environment, you can immediately start working on:
+
+- **Object Detection**: Using YOLO models with Ultralytics
+- **Image Classification**: With PyTorch or TensorFlow
+- **NLP Applications**: Using Transformers and Hugging Face models
+- **Model Optimization**: Converting models to ONNX format
+- **API Deployment**: Creating REST APIs with FastAPI
+- **Interactive Demos**: Building Streamlit or Gradio applications
+- **Audio Processing**: Speech recognition and audio analysis
+
+## 🛠️ Troubleshooting
+
+### Common Issues
+
+**Permission Errors:**
+```bash
+# Don't run with sudo - use regular user permissions
+# If you see permission errors, try:
+chmod +x setup_edge_ai_env.sh
+```
+
+**UV Installation Failed:**
+```bash
+# Manually install UV:
+curl -LsSf https://astral.sh/uv/install.sh | sh
+export PATH="$HOME/.local/bin:$PATH"
+```
+
+**Python 3.12 Not Found:**
+The script uses UV's built-in Python management, which automatically downloads Python 3.12 if needed.
+
+**Package Installation Errors:**
+```bash
+# Clean reinstall:
+rm -rf .venv requirements.txt
+./setup_edge_ai_env.sh
+```
+
+**Import Errors:**
+```bash
+# Verify you're using the correct environment:
+which python  # Should point to .venv/bin/python
+
+# Or use UV run:
+uv run --python .venv python -c "import torch; print(torch.__version__)"
+```
+
+### Windows-Specific Issues
+
+- Use Git Bash, PowerShell, or WSL for best compatibility
+- Ensure Windows Defender isn't blocking script execution
+- Some packages may require Microsoft Visual C++ Build Tools
+
+## 🔄 Updating Dependencies
+
+To update packages in your environment:
 
 ```bash
-# Create a project directory
-mkdir edge_ai_project
-cd edge_ai_project
+# Update all packages
+uv pip install --python .venv --upgrade -r requirements.txt
 
-# Create a virtual environment (standard method)
-python -m venv edge_ai_env
-
-# Activate the environment
-# On Windows:
-source edge_ai_env/Scripts/activate
-# On Linux/macOS:
-# source edge_ai_env/bin/activate
-
-# Install dependencies
-pip install -r requirements.txt
+# Update specific package
+uv pip install --python .venv --upgrade torch
 ```
 
-## Setting Up Hugging Face Access
+## 🎮 Getting Started Examples
 
-All models can be downloaded from Hugging Face. To access models:
-
-1. **Create a Hugging Face account:**
-   Visit https://huggingface.co/join
-
-2. **Generate an access token:**
-   - Go to https://huggingface.co/settings/tokens
-   - Click "New token"
-   - Name it (e.g., "edge-ai-project")
-   - Select read permissions
-   - Copy the token
-
-3. **Login via the command line:**
-   ```bash
-   # Ensure your environment is activated
-   # On Windows:
-   source edge_ai_project/python3.12/Scripts/activate
-   # On Linux/macOS:
-   # source edge_ai_project/python3.12/bin/activate
-   
-   # Login to Hugging Face
-   huggingface-cli login
-   ```
-
-## Working with Models
-
-### Downloading Models from Hugging Face
-
+### Quick YOLO Object Detection Test
 ```python
-from huggingface_hub import snapshot_download
+# test_yolo.py
+from ultralytics import YOLO
+import cv2
 
-# Download a model
-model_path = snapshot_download(repo_id="TinyLlama/TinyLlama-1.1B-Chat-v1.0")
-print(f"Model downloaded to: {model_path}")
+# Load a model
+model = YOLO('yolov8n.pt')  # Will download automatically
+
+# Run inference on an image
+results = model('https://ultralytics.com/images/bus.jpg')
+results[0].show()  # Display results
 ```
 
-### Converting Models to ONNX
-
+### Simple FastAPI Server
 ```python
-from transformers import AutoModelForSequenceClassification
-from optimum.onnxruntime import ORTModelForSequenceClassification
+# api_server.py
+from fastapi import FastAPI
+import uvicorn
 
-# Load and convert to ONNX
-model_id = "distilbert-base-uncased-finetuned-sst-2-english"
-ort_model = ORTModelForSequenceClassification.from_pretrained(model_id, export=True)
+app = FastAPI()
 
-# Save the ONNX model
-ort_model.save_pretrained("./onnx_model")
+@app.get("/")
+def read_root():
+    return {"message": "Edge AI API is running!"}
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=8000)
 ```
 
-### Inference with ONNX Runtime
-
-```python
-import onnxruntime as ort
-import numpy as np
-
-# Load the ONNX model
-session = ort.InferenceSession("./onnx_model/model.onnx")
-
-# Prepare input
-input_data = np.random.randn(1, 3, 224, 224).astype(np.float32)
-
-# Run inference
-outputs = session.run(None, {"input": input_data})
+Run with:
+```bash
+uv run --python .venv python api_server.py
 ```
 
-## Creating a Simple Demo
+## 📚 Additional Resources
 
-The environment includes Streamlit and Gradio for quickly creating web demos:
-
-```python
-# Example Streamlit app
-import streamlit as st
-from transformers import pipeline
-from PIL import Image
-
-# Load model
-classifier = pipeline("image-classification")
-
-st.title("Image Classifier Demo")
-uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
-
-if uploaded_file is not None:
-    image = Image.open(uploaded_file)
-    st.image(image, caption="Uploaded Image", use_column_width=True)
-    
-    results = classifier(image)
-    
-    st.write("## Results")
-    for result in results:
-        st.write(f"{result['label']}: {result['score']:.2%}")
-```
-
-## Troubleshooting
-
-### Common Issues:
-
-1. **Script Permission Errors:**
-   ```bash
-   chmod +x setup_edge_ai_env.sh
-   ```
-
-2. **Virtual Environment Activation Path:**
-   - Windows: `source python3.12/Scripts/activate`
-   - Linux/macOS: `source python3.12/bin/activate`
-
-3. **Package Installation Errors:**
-   If you encounter errors during installation:
-   ```bash
-   uv pip install --upgrade pip
-   uv pip install -r requirements.txt --no-deps
-   ```
-
-4. **UV Installation Issues:**
-   If UV installation fails, you can manually install it:
-   ```bash
-   # On Windows
-   curl -LsSf https://astral.sh/uv/install.ps1 | pwsh
-   
-   # On Linux/macOS
-   curl -LsSf https://astral.sh/uv/install.sh | sh
-   ```
-
-## Dependencies
-
-The installed environment includes:
-
-- **ONNX & Runtime**: For model optimization and deployment
-- **Deep Learning Frameworks**: PyTorch, TensorFlow, JAX
-- **Computer Vision**: OpenCV, PIL, scikit-image
-- **NLP & Speech**: transformers, datasets, librosa
-- **Hugging Face Tools**: huggingface_hub, accelerate
-- **Web UIs**: streamlit, gradio
-- **API Development**: FastAPI, uvicorn
-- **Utilities**: numpy, pandas, matplotlib, etc.
-
-## Additional Resources
-
-- [ONNX Official Documentation](https://onnx.ai/get-started/)
-- [Hugging Face Optimum Library](https://huggingface.co/docs/optimum/index)
-- [Edge AI Benchmarking Tools](https://github.com/onnx/tensorflow-onnx/tree/master/benchmark)
+- [UV Documentation](https://docs.astral.sh/uv/)
+- [Ultralytics Documentation](https://docs.ultralytics.com/)
+- [PyTorch Tutorials](https://pytorch.org/tutorials/)
+- [Hugging Face Documentation](https://huggingface.co/docs)
 - [FastAPI Documentation](https://fastapi.tiangolo.com/)
-- [UV Package Manager](https://github.com/astral-sh/uv)
+
+## 🤝 Contributing
+
+To modify the environment:
+
+1. Edit `requirements.txt` to add/remove packages
+2. Re-run the setup script or use `uv pip install`
+3. Test your changes with the verification script
+
+## 📄 License
+
+This setup script is provided as-is for educational and development purposes. Individual packages have their own licenses.
+
+---
+
+**Happy Edge AI Development! 🚀**
