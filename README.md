@@ -61,7 +61,7 @@ Throughout the 5-week course, each student will build a multimodal edge AI appli
 - Design resource-aware applications with responsive user experiences
 - Document all processes thoroughly in a well-maintained GitHub repository
 
-## 🔍 Sample Projects
+## 🔍 Selected Project
 
 Choose one of the following project options to implement throughout the course:
 
@@ -70,6 +70,10 @@ Choose one of the following project options to implement throughout the course:
 3. **Edge Creative Studio**: A content creation tool with on-device generative AI capabilities
 4. **Smart Monitoring System**: A privacy-preserving monitoring system that performs all processing on-device
 5. **Field Research Assistant**: An offline-capable field research tool for scientific data collection and analysis
+
+I have selected project number 2 for the purposes of this class.
+
+<img src=".\docs\images\project.png" alt="Project Requirements" width="300">
 
 ## 📋 Repository Requirements
 
