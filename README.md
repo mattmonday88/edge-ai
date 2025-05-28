@@ -3,6 +3,7 @@
 <div align="center">
   <img src=".\docs\syllabus\usa_logo.png" alt="University of South Alabama Logo" width="300">
   <h2>5-Week Master's Level Course</h2>
+  <h2>Testing 123</h2>
   <p>Edge AI Certification Program, University of South Alabama</p>
 </div>
 
