@@ -73,7 +73,7 @@ Choose one of the following project options to implement throughout the course:
 
 I have selected project number 2 for the purposes of this class.
 
-<img src=".\docs\images\project.png" alt="Project Requirements" width="300">
+<img src=".\docs\images\project.PNG" alt="Project Requirements" width="300">
 
 ## 📋 Repository Requirements
 
