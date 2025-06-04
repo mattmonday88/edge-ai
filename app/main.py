@@ -20,7 +20,7 @@ def main():
     metrics = model.val()
 
     # Perform object detection on an image
-    results = model("./test/Petland_Florida_Cavalier_King_Charles_Spaniel_puppy.jpg")
+    results = model(f"{os.path.dirname(os.path.abspath(__file__))}/test/dog.jpg")
     results[0].show()
 
     # Export the model to ONNX format

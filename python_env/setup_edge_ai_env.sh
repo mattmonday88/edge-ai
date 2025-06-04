@@ -47,11 +47,13 @@ optimum
 torch
 torchvision
 tensorflow
+onnxconverter-common
 
 # Computer Vision Libraries
 opencv-python-headless
 pillow
 scikit-image
+fiftyone
 
 # NLP & Speech Processing
 transformers
