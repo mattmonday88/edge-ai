@@ -1,0 +1,14 @@
+<!doctype html>
+<html>
+<head><title>Analysis Results</title></head>
+<body>
+  <!-- <h2>Annotated Images</h2>
+  {% for path in image_paths %}
+    <img src="{{ path }}" width="800"><br>
+  {% endfor %} -->
+  <h2>Extracted Summary</h2>
+  <p>{{ summary }}</p>
+  <h2>Named Entities</h2>
+  <ul>{% for ent in entities %}<li>{{ ent }}</li>{% endfor %}</ul>
+</body>
+</html>

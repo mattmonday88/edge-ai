@@ -11,3 +11,13 @@ python_env/edge_ai_project/requirements.txt
 app/requirements.txt
 app/yolo
 coco8
+models/distilbart-cnn-12-6-onnx/distilbart-cnn-12-6.onnx
+app/.venv/
+app/venv/
+.vscode/
+app/scripts/publaynet/*
+app/scripts/yolov5/*
+app/models/*
+models/*
+app/scripts/yolov5/*
+
